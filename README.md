@@ -33,6 +33,10 @@ I treated this as a small but real-world problem: every campus organizes hackath
 # document
 [Link Text](https://docs.google.com/document/d/1OnU5M8G0rpgZogj9lGxcxMcr6BW6RXN70ZTcpUFRND0/edit?usp=sharing)
 
+# ER Diagram
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e2ef9af4-d0c1-42cb-8705-df0de75e46fa" />
+
+
 
     
 
