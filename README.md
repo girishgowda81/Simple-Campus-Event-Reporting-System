@@ -30,6 +30,10 @@ I treated this as a small but real-world problem: every campus organizes hackath
 <img width="2560" height="1258" alt="image" src="https://github.com/user-attachments/assets/2d6f5119-955c-4c66-a153-b76507cb1163" />
 <img width="2082" height="1340" alt="Screenshot 2025-09-07 142715" src="https://github.com/user-attachments/assets/964ae893-47ff-4e5d-8770-733d598fd985" />
 
+# document
+[Link Text](https://docs.google.com/document/d/1OnU5M8G0rpgZogj9lGxcxMcr6BW6RXN70ZTcpUFRND0/edit?usp=sharing)
+
+
     
 
 
