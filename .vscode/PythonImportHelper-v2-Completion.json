@@ -1,0 +1,282 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "IntegrityError",
+        "importPath": "sqlalchemy.exc",
+        "description": "sqlalchemy.exc",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.exc",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "College",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Event",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Registration",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Attendance",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Feedback",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "UniqueConstraint",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "requests,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests.",
+        "description": "requests.",
+        "detail": "requests.",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "kind": 2,
+        "importPath": "app.app",
+        "description": "app.app",
+        "peekOfCode": "def create_app():\n    load_dotenv()\n    app = Flask(__name__)\n    db_url = os.getenv('DATABASE_URL', 'sqlite:///event_reporting.db')\n    app.config['SQLALCHEMY_DATABASE_URI'] = db_url\n    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False\n    db.init_app(app)\n    @app.route('/initdb', methods=['POST'])\n    def initdb():\n        with app.app_context():",
+        "detail": "app.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.app",
+        "description": "app.app",
+        "peekOfCode": "app = create_app()\nif __name__ == '__main__':\n    app.run(port=5000, debug=True)",
+        "detail": "app.app",
+        "documentation": {}
+    },
+    {
+        "label": "College",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class College(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(120), unique=True, nullable=False)\nclass Student(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(120), nullable=False)\n    email = db.Column(db.String(120), nullable=False)\n    college_id = db.Column(db.Integer, db.ForeignKey('college.id'), nullable=False)\n    __table_args__ = (UniqueConstraint('email','college_id', name='uq_student_email_college'),)\nclass Event(db.Model):",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Student",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Student(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(120), nullable=False)\n    email = db.Column(db.String(120), nullable=False)\n    college_id = db.Column(db.Integer, db.ForeignKey('college.id'), nullable=False)\n    __table_args__ = (UniqueConstraint('email','college_id', name='uq_student_email_college'),)\nclass Event(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    title = db.Column(db.String(180), nullable=False)\n    type = db.Column(db.String(50), nullable=False)  # Workshop/Fest/Seminar/etc.",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Event",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Event(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    title = db.Column(db.String(180), nullable=False)\n    type = db.Column(db.String(50), nullable=False)  # Workshop/Fest/Seminar/etc.\n    date = db.Column(db.Date, nullable=False)\n    college_id = db.Column(db.Integer, db.ForeignKey('college.id'), nullable=False)\nclass Registration(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)\n    event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Registration",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Registration(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)\n    event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)\n    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)\n    __table_args__ = (UniqueConstraint('student_id','event_id', name='uq_registration'),)\nclass Attendance(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)\n    event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Attendance",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Attendance(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)\n    event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)\n    status = db.Column(db.String(10), nullable=False)  # present/absent\n    marked_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)\n    __table_args__ = (UniqueConstraint('student_id','event_id', name='uq_attendance'),)\nclass Feedback(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "Feedback",
+        "kind": 6,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "class Feedback(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)\n    event_id = db.Column(db.Integer, db.ForeignKey('event.id'), nullable=False)\n    rating = db.Column(db.Integer, nullable=False)  # 1..5\n    comment = db.Column(db.Text, nullable=True)\n    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)\n    __table_args__ = (UniqueConstraint('student_id','event_id', name='uq_feedback'),)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "db",
+        "kind": 5,
+        "importPath": "app.models",
+        "description": "app.models",
+        "peekOfCode": "db = SQLAlchemy()\nclass College(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(120), unique=True, nullable=False)\nclass Student(db.Model):\n    id = db.Column(db.Integer, primary_key=True)\n    name = db.Column(db.String(120), nullable=False)\n    email = db.Column(db.String(120), nullable=False)\n    college_id = db.Column(db.Integer, db.ForeignKey('college.id'), nullable=False)\n    __table_args__ = (UniqueConstraint('email','college_id', name='uq_student_email_college'),)",
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "scripts.query_db",
+        "description": "scripts.query_db",
+        "peekOfCode": "conn = sqlite3.connect(\"D:\\Downloads\\CampusEventReporting-Prototype\\instance\\event_reporting.db\")\ncur = conn.cursor()\nprint(\"📌 Tables in the database:\")\ncur.execute(\"SELECT name FROM sqlite_master WHERE type='table';\")\nprint(cur.fetchall())\nprint(\"\\n📌 Events:\")\ncur.execute(\"SELECT * FROM event;\")\nfor row in cur.fetchall():\n    print(row)\nprint(\"\\n📌 Students:\")",
+        "detail": "scripts.query_db",
+        "documentation": {}
+    },
+    {
+        "label": "cur",
+        "kind": 5,
+        "importPath": "scripts.query_db",
+        "description": "scripts.query_db",
+        "peekOfCode": "cur = conn.cursor()\nprint(\"📌 Tables in the database:\")\ncur.execute(\"SELECT name FROM sqlite_master WHERE type='table';\")\nprint(cur.fetchall())\nprint(\"\\n📌 Events:\")\ncur.execute(\"SELECT * FROM event;\")\nfor row in cur.fetchall():\n    print(row)\nprint(\"\\n📌 Students:\")\ncur.execute(\"SELECT * FROM Student;\")",
+        "detail": "scripts.query_db",
+        "documentation": {}
+    },
+    {
+        "label": "post",
+        "kind": 2,
+        "importPath": "scripts.seed",
+        "description": "scripts.seed",
+        "peekOfCode": "def post(path, payload):\n    r = requests.post(f\"{BASE}{path}\", json=payload)\n    try:\n        data = r.json()\n    except Exception:\n        data = r.text  # fallback if JSON parse fails\n    print(path, r.status_code, data)\n    return data\ndef main():\n    requests.post(f\"{BASE}/initdb\")",
+        "detail": "scripts.seed",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.seed",
+        "description": "scripts.seed",
+        "peekOfCode": "def main():\n    requests.post(f\"{BASE}/initdb\")\n    # c = post('/colleges', {'name':'AI Institute'})\n    # col_id = c['id']\n    c = post('/colleges', {'name':'AI Institute'})\n    if 'id' not in c:\n      print(\"College already exists, skipping…\")\n      return\n    col_id = c['id']\n    s1 = post('/students', {'name':'Asha', 'email':'asha@example.com', 'college_id':col_id})",
+        "detail": "scripts.seed",
+        "documentation": {}
+    }
+]

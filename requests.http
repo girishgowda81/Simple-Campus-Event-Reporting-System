@@ -1,0 +1,48 @@
+### Use with VS Code REST Client or curl
+
+# Initialize DB
+POST http://localhost:5000/initdb
+
+# Create college
+POST http://localhost:5000/colleges
+Content-Type: application/json
+
+{"name":"AI Institute"}
+
+# Create student
+POST http://localhost:5000/students
+Content-Type: application/json
+
+{"name":"Asha","email":"asha@example.com","college_id":1}
+
+# Create event
+POST http://localhost:5000/events
+Content-Type: application/json
+
+{"title":"Intro to LLMs","type":"Seminar","date":"2025-09-07","college_id":1}
+
+# Register
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{"student_id":1,"event_id":1}
+
+# Attendance
+POST http://localhost:5000/attendance
+Content-Type: application/json
+
+{"student_id":1,"event_id":1,"status":"present"}
+
+# Feedback
+POST http://localhost:5000/feedback
+Content-Type: application/json
+
+{"student_id":1,"event_id":1,"rating":5}
+
+# Reports
+GET http://localhost:5000/reports/event_popularity?college_id=1
+GET http://localhost:5000/reports/attendance?event_id=1
+GET http://localhost:5000/reports/feedback?event_id=1
+GET http://localhost:5000/reports/student_participation?student_id=1
+GET http://localhost:5000/reports/top_active_students?college_id=1&limit=3
+GET http://localhost:5000/reports/event_summary?college_id=1&event_type=Seminar
