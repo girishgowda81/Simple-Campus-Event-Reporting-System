@@ -1,39 +1,19 @@
-1️⃣ Approach
-
-Objective:
+ Objective:
 Build a system to track college events, student registrations, attendance, and feedback, and generate reports on event popularity and student participation.
 
 Assumptions & Decisions:
-
 Each college can host multiple events.
-
 Students can register for multiple events.
-
 Attendance is linked to registrations.
-
-Feedback is optional and numeric (1–5).
-
-Event cancellations are tracked but don’t delete historical attendance or feedback.
-
+Feedback is optional and numeric.
 Duplicate registrations are prevented.
 
 Used ChatGPT to brainstorm DB schema, API design, and workflows. Some suggestions were customized for practical implementation.
 
 Tools Used:
+  Database: SQLite
+  Language: Python
+  AI Tool: ChatGPT for design ideas, queries, and workflow suggestions
 
-Database: SQLite
-
-Language: Python
-
-AI Tool: ChatGPT for design ideas, queries, and workflow suggestions
-
-2️⃣ Design Document
-a) Data to Track
-
-=> Event Creation: title, date, type, college.
-
-=> Student Registration: student_id, event_id, timestamp.
-
-=> Attendance: registration_id, status (present/absent), timestamp.
-
-=> Feedback: registration_id, rating (1–5), optional comment, timestamp.
+Project AI Conversation Log:
+    https://chatgpt.com/share/68bd3690-1714-8006-ab58-18369bd96871
